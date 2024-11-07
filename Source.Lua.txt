@@ -1,14 +1,33 @@
+local TweenService = game:GetService("TweenService")
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(180, 220, 255), -- Azul claro cristalino para el fondo principal
-  Cor_Options = Color3.fromRGB(200, 240, 255), -- Azul más claro para los fondos de opciones
-  Cor_Stroke = Color3.fromRGB(150, 200, 220), -- Tono azul-gris para los bordes
-  Cor_Text = Color3.fromRGB(240, 255, 255), -- Blanco suave para el texto
-  Cor_DarkText = Color3.fromRGB(130, 180, 200), -- Azul grisáceo para texto oscuro
-  Cor_Acento = Color3.fromRGB(180, 210, 255), -- Azul hielo como color de acento
-  Cor_Electric = Color3.fromRGB(120, 190, 255), -- Azul eléctrico suave para elementos destacados
-  Corner_Radius = UDim.new(0, 8), -- Un borde más redondeado para dar un aspecto suave
-  Text_Font = Enum.Font.GothamBold
+    Cor_Hub = Color3.fromRGB(20, 40, 20),
+    Cor_Options = Color3.fromRGB(30, 60, 30),
+    Cor_Stroke = Color3.fromRGB(85, 170, 85),
+    Cor_Text = Color3.fromRGB(220, 255, 220),
+    Cor_DarkText = Color3.fromRGB(150, 200, 150),
+    Cor_Acento = Color3.fromRGB(34, 139, 34),
+    Cor_Electric = Color3.fromRGB(0, 128, 0),
+    Corner_Radius = UDim.new(0, 6),
+    Text_Font = Enum.Font.GothamBold
 }
+
+local part = script.Parent
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true)
+
+function randomRainbowColor()
+    return Color3.fromHSV(math.random(), 1, 1)
+end
+
+function startRainbowTween()
+    while true do
+        local targetColor = randomRainbowColor()
+        local tween = TweenService:Create(part, tweenInfo, {BackgroundColor3 = targetColor})
+        tween:Play()
+        tween.Completed:Wait()
+    end
+end
+
+startRainbowTween()
 
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
