@@ -1,30 +1,12 @@
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(5, 5, 45),
-  Cor_Options = Color3.fromRGB(25, 25, 85),
-  Cor_Stroke = Color3.fromRGB(0, 255, 200),
-  Cor_Text = Color3.fromRGB(255, 255, 255),
-  Cor_DarkText = Color3.fromRGB(100, 255, 200),
+  Cor_Hub = Color3.fromRGB(15, 10, 35),
+  Cor_Options = Color3.fromRGB(50, 20, 80),
+  Cor_Stroke = Color3.fromRGB(200, 75, 0),
+  Cor_Text = Color3.fromRGB(255, 140, 0),
+  Cor_DarkText = Color3.fromRGB(70, 255, 0),
   Corner_Radius = UDim.new(0, 8),
   Text_Font = Enum.Font.FredokaOne
 }
-
-local function getRainbowColor()
-  local hue = tick() % 5 / 5
-  return Color3.fromHSV(hue, 1, 1)
-end
-
-local function updateColors()
-  while true do
-    Configs_HUB.Cor_Hub = getRainbowColor()
-    Configs_HUB.Cor_Options = getRainbowColor()
-    Configs_HUB.Cor_Stroke = getRainbowColor()
-    Configs_HUB.Cor_Text = getRainbowColor()
-    Configs_HUB.Cor_DarkText = getRainbowColor()
-    wait(0.1)
-  end
-end
-
-spawn(updateColors)
 
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
