@@ -1,11 +1,14 @@
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(5, 5, 45),
-  Cor_Options = Color3.fromRGB(25, 25, 85),
-  Cor_Stroke = Color3.fromRGB(0, 255, 200),
-  Cor_Text = Color3.fromRGB(255, 255, 255),
-  Cor_DarkText = Color3.fromRGB(100, 255, 200),
-  Corner_Radius = UDim.new(0, 8),
-  Text_Font = Enum.Font.FredokaOne
+local Configs_HUB = {
+  Cor_Hub = Color3.fromRGB(20, 20, 30),
+  Cor_Options = Color3.fromRGB(30, 30, 45),
+  Cor_Stroke = Color3.fromRGB(100, 255, 218),
+  Cor_Text = Color3.fromRGB(173, 255, 47),
+  Cor_DarkText = Color3.fromRGB(127, 255, 212),
+  Cor_Acento = Color3.fromRGB(255, 69, 0),
+  Cor_Electric = Color3.fromRGB(0, 191, 255),
+  Corner_Radius = UDim.new(0, 6),
+  Text_Font = Enum.Font.GothamBold
 }
 
 local CoreGui = game:GetService("CoreGui")
