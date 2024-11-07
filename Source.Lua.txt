@@ -1,5 +1,4 @@
 local Configs_HUB = {
-local Configs_HUB = {
   Cor_Hub = Color3.fromRGB(20, 20, 30),
   Cor_Options = Color3.fromRGB(30, 30, 45),
   Cor_Stroke = Color3.fromRGB(100, 255, 218),
