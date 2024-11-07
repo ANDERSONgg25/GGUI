@@ -1,32 +1,29 @@
 local Configs_HUB = {
-    Cor_Hub = Color3.fromRGB(20, 40, 20),
-    Cor_Options = Color3.fromRGB(30, 60, 30),
-    Cor_Stroke = Color3.fromRGB(85, 170, 85),
-    Cor_Text = Color3.fromRGB(220, 255, 220),
-    Cor_DarkText = Color3.fromRGB(150, 200, 150),
-    Cor_Acento = Color3.fromRGB(34, 139, 34),
-    Cor_Electric = Color3.fromRGB(0, 128, 0),
-    Corner_Radius = UDim.new(0, 6),
-    Text_Font = Enum.Font.GothamBold
+  Cor_Hub = Color3.fromRGB(5, 5, 45),
+  Cor_Options = Color3.fromRGB(25, 25, 85),
+  Cor_Stroke = Color3.fromRGB(0, 255, 200),
+  Cor_Text = Color3.fromRGB(255, 255, 255),
+  Cor_DarkText = Color3.fromRGB(100, 255, 200),
+  Corner_Radius = UDim.new(0, 8),
+  Text_Font = Enum.Font.FredokaOne
 }
 
-local part = script.Parent
-local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true)
-
-function randomRainbowColor()
-    return Color3.fromHSV(math.random(), 1, 1)
+local function getRandomRainbowColor()
+  return Color3.fromHSV(math.random(), 1, 1)
 end
 
-function startRainbowTween()
-    while true do
-        local targetColor = randomRainbowColor()
-        local tween = TweenService:Create(part, tweenInfo, {BackgroundColor3 = targetColor})
-        tween:Play()
-        tween.Completed:Wait()
-    end
+local function animateRainbow()
+  while true do
+    Configs_HUB.Cor_Hub = getRandomRainbowColor()
+    Configs_HUB.Cor_Options = getRandomRainbowColor()
+    Configs_HUB.Cor_Stroke = getRandomRainbowColor()
+    Configs_HUB.Cor_Text = getRandomRainbowColor()
+    Configs_HUB.Cor_DarkText = getRandomRainbowColor()
+    wait(0.1)
+  end
 end
 
-startRainbowTween()
+spawn(animateRainbow)
 
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
