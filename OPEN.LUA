@@ -5,7 +5,6 @@ getgenv().ToggleUI = "H"
 
 task.spawn(function()
     if not getgenv().LoadedMobileUI == true then getgenv().LoadedMobileUI = true
-        game:GetService("UserInputService").MouseIconEnabled = false
 
         local OpenUI = Instance.new("ScreenGui")
         local ImageButton = Instance.new("ImageButton")
