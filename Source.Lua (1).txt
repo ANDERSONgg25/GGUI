@@ -1249,6 +1249,7 @@ function MakeWindow(Configs)
     local TextButton = Create("TextButton", parent, {
       Size = UDim2.new(1, 0, 0, 25),
       BackgroundColor3 = Configs_HUB.Cor_Options,
+      BorderColor3 = Color3.fromRGB(249, 0, 0),
       Name = "Frame",
       Text = "",
       AutoButtonColor = false
